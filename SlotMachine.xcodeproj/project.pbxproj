@@ -13,6 +13,8 @@
 		3DEDBC2419D1EAA3002AC355 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DEDBC2319D1EAA3002AC355 /* Images.xcassets */; };
 		3DEDBC2719D1EAA3002AC355 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DEDBC2519D1EAA3002AC355 /* LaunchScreen.xib */; };
 		3DEDBC3319D1EAA3002AC355 /* SlotMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDBC3219D1EAA3002AC355 /* SlotMachineTests.swift */; };
+		3DEDBC3D19D20F34002AC355 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDBC3C19D20F34002AC355 /* Slot.swift */; };
+		3DEDBC3F19D211CC002AC355 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDBC3E19D211CC002AC355 /* Factory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		3DEDBC2C19D1EAA3002AC355 /* SlotMachineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlotMachineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEDBC3119D1EAA3002AC355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DEDBC3219D1EAA3002AC355 /* SlotMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineTests.swift; sourceTree = "<group>"; };
+		3DEDBC3C19D20F34002AC355 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
+		3DEDBC3E19D211CC002AC355 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				3DEDBC1C19D1EAA3002AC355 /* AppDelegate.swift */,
 				3DEDBC1E19D1EAA3002AC355 /* ViewController.swift */,
+				3DEDBC3C19D20F34002AC355 /* Slot.swift */,
+				3DEDBC3E19D211CC002AC355 /* Factory.swift */,
 				3DEDBC2019D1EAA3002AC355 /* Main.storyboard */,
 				3DEDBC2319D1EAA3002AC355 /* Images.xcassets */,
 				3DEDBC2519D1EAA3002AC355 /* LaunchScreen.xib */,
@@ -212,7 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DEDBC3F19D211CC002AC355 /* Factory.swift in Sources */,
 				3DEDBC1F19D1EAA3002AC355 /* ViewController.swift in Sources */,
+				3DEDBC3D19D20F34002AC355 /* Slot.swift in Sources */,
 				3DEDBC1D19D1EAA3002AC355 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
