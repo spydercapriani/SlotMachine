@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     var btnReset:UIButton!
     var btnBetOne:UIButton!
     var btnBetMax:UIButton!
+    var btnBetAll:UIButton!
     var btnSpin:UIButton!
     
     // Top Container
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
     let kSixth:CGFloat = 1.0/6.0
     let kThird:CGFloat = 1.0/3.0
     let kHalf:CGFloat = 1.0/2.0
-    let kEighth:CGFloat = 1.0/8.0
+    let kTenth:CGFloat = 1.0/10.0
     
     let kColumns = 3 // # of Containers
     let kRows = 3 // # of Slots
@@ -78,7 +79,7 @@ class ViewController: UIViewController {
     func betOneButtonPressed (button: UIButton) {
         if credits <= 0 {
             showAlert(header: "No More Credits", message: "Reset Game")
-            println("Out of Credits: \(credits)") // print to console number of credits
+            println("betOne: Out of Credits: \(credits)") // print to console number of credits
         }else {
             if currentBet < 5 {
                 currentBet++
@@ -93,7 +94,7 @@ class ViewController: UIViewController {
     func betMaxButtonPressed (button: UIButton) {
         if credits <= 0 {
             showAlert(header: "No More Credits", message: "Reset Game")
-            println("Out of Credits: \(credits)") // print to console number of credits
+            println("betMax: Out of Credits: \(credits)") // print to console number of credits
         }else if credits <= 5 {
             currentBet += credits
             credits -= credits
@@ -106,6 +107,17 @@ class ViewController: UIViewController {
             }else{
                 showAlert(message: "You can only bet 5 credits at a time")
             }
+        }
+    }
+    
+    func betAllButtonPressed (button: UIButton) {
+        if credits <= 0 {
+            showAlert(header: "No More Credits", message: "Reset Game")
+            println("betAll: Out of Credits: \(credits)") // print to console number of credits
+        }else{
+            currentBet += credits
+            credits -= credits
+            updateMainView()
         }
     }
     
@@ -231,7 +243,7 @@ class ViewController: UIViewController {
         btnReset.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 12)
         btnReset.backgroundColor = UIColor.yellowColor()
         btnReset.sizeToFit()
-        btnReset.center = CGPointMake(containerView.frame.width * kEighth, containerView.frame.height * kHalf)
+        btnReset.center = CGPointMake(containerView.frame.width * kTenth, containerView.frame.height * kHalf)
         btnReset.addTarget(self, action: "resetButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(btnReset)
         
@@ -241,7 +253,7 @@ class ViewController: UIViewController {
         btnBetOne.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 12)
         btnBetOne.backgroundColor = UIColor.greenColor()
         btnBetOne.sizeToFit()
-        btnBetOne.center = CGPointMake(containerView.frame.width * kEighth * 3, containerView.frame.height * kHalf)
+        btnBetOne.center = CGPointMake(containerView.frame.width * kTenth * 2.8, containerView.frame.height * kHalf)
         btnBetOne.addTarget(self, action: "betOneButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(btnBetOne)
         
@@ -251,9 +263,19 @@ class ViewController: UIViewController {
         btnBetMax.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 12)
         btnBetMax.backgroundColor = UIColor.greenColor()
         btnBetMax.sizeToFit()
-        btnBetMax.center = CGPointMake(containerView.frame.width * kEighth * 5, containerView.frame.height * kHalf)
+        btnBetMax.center = CGPointMake(containerView.frame.width * kTenth * 5.1, containerView.frame.height * kHalf)
         btnBetMax.addTarget(self, action: "betMaxButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(btnBetMax)
+        
+        btnBetAll = UIButton()
+        btnBetAll.setTitle("All In", forState: UIControlState.Normal)
+        btnBetAll.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        btnBetAll.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 12)
+        btnBetAll.backgroundColor = UIColor.greenColor()
+        btnBetAll.sizeToFit()
+        btnBetAll.center = CGPointMake(containerView.frame.width * kTenth * 7.2, containerView.frame.height * kHalf)
+        btnBetAll.addTarget(self, action: "betAllButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(btnBetAll)
         
         btnSpin = UIButton()
         btnSpin.setTitle("Spin", forState: UIControlState.Normal)
@@ -261,7 +283,7 @@ class ViewController: UIViewController {
         btnSpin.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 12)
         btnSpin.backgroundColor = UIColor.redColor()
         btnSpin.sizeToFit()
-        btnSpin.center = CGPointMake(containerView.frame.width * kEighth * 7, containerView.frame.height * kHalf)
+        btnSpin.center = CGPointMake(containerView.frame.width * kTenth * 9, containerView.frame.height * kHalf)
         btnSpin.addTarget(self, action: "spinButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(btnSpin)
     }

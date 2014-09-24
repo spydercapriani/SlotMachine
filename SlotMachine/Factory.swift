@@ -61,7 +61,7 @@ class Factory {
         case 10:
             slot = Slot(value: 10, image: UIImage(named: "Ten"), isRed: true)
         case 11:
-            slot = Slot(value: 11, image: UIImage(named: "Jack"), isRed: true)
+            slot = Slot(value: 11, image: UIImage(named: "Jack"), isRed: false)
         case 12:
             slot = Slot(value: 12, image: UIImage(named: "Queen"), isRed: false)
         case 13:

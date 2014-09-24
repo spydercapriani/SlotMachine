@@ -20,20 +20,24 @@ class SlotBrain {
         
         for slotRow in slotsInRows {
             if checkFlush(slotRow){
-                println("Flush")
+                print("Flush \t")
                 winnings++
                 flushWinCount++
             }
             if checkThreeInARow(slotRow){
-                println("Three in a Row")
+                print("Three in a Row \t")
                 winnings++
                 straightWinCount++
             }
             if checkThreeOfAKind(slotRow){
-                println("Three of a Kind")
+                print("Three of a Kind \t")
                 winnings += 3
                 threeOfAKindWinCount++
             }
+            if !checkThreeOfAKind(slotRow) && !checkThreeInARow(slotRow) && !checkFlush(slotRow){
+                print("Lost \t")
+            }
+            println()
         }
         
         if 3 == flushWinCount {
