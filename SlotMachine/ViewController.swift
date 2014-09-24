@@ -171,7 +171,7 @@ class ViewController: UIViewController {
                     slot = slotContainer[slotNumber]
                     slotImageView.image = slot.image
                 }else {
-                    slotImageView.image = UIImage(named: "Ace")
+                    slotImageView.image = UIImage(named: "Joker")
                 }
                 
                 slotImageView.frame = CGRectMake(containerView.bounds.origin.x + (containerView.bounds.size.width * (CGFloat(containerNumber) * kThird)), containerView.bounds.origin.y + (containerView.bounds.size.height * (CGFloat(slotNumber) * kThird)), containerView.bounds.width * kThird - kMarginForSlot, containerView.bounds.height * kThird - kMarginForSlot)

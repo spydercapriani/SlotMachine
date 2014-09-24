@@ -15,33 +15,58 @@ class SlotBrain {
         
         var winnings = 0
         var flushWinCount = 0
+        var royalFlushWinCount = 0
+        var straightFlushWinCount = 0
         var threeOfAKindWinCount = 0
         var straightWinCount = 0
         
         for slotRow in slotsInRows {
-            if checkFlush(slotRow){
-                print("Flush \t")
-                winnings++
+            if checkRoyalFlush(slotRow){
+                print("Royal Flush \t")
+                winnings += 30
+                royalFlushWinCount++
+                straightFlushWinCount++
                 flushWinCount++
-            }
-            if checkThreeInARow(slotRow){
-                print("Three in a Row \t")
-                winnings++
+            }else if checkStraightFlush(slotRow){
+                print("Straight Flush \t")
+                winnings += 15
+                straightFlushWinCount++
                 straightWinCount++
-            }
-            if checkThreeOfAKind(slotRow){
-                print("Three of a Kind \t")
-                winnings += 3
-                threeOfAKindWinCount++
-            }
-            if !checkThreeOfAKind(slotRow) && !checkThreeInARow(slotRow) && !checkFlush(slotRow){
-                print("Lost \t")
+                flushWinCount++
+            }else{
+                if checkFlush(slotRow){
+                    print("Flush \t")
+                    winnings++
+                    flushWinCount++
+                }
+                
+                if checkThreeInARow(slotRow){
+                    print("Three in a Row \t")
+                    winnings++
+                    straightWinCount++
+                }
+                
+                if checkThreeOfAKind(slotRow){
+                    print("Three of a Kind \t")
+                    winnings += 3
+                    threeOfAKindWinCount++
+                }
+                if !checkThreeOfAKind(slotRow) && !checkThreeInARow(slotRow) && !checkFlush(slotRow){
+                    print("Lost \t")
+                }
             }
             println()
         }
         
+        if 3 == royalFlushWinCount {
+            println("Royally Flushed!")
+            winnings += 5000
+        }
+        if 3 == straightFlushWinCount {
+            println("George Straight")
+        }
         if 3 == flushWinCount {
-            println("Royal Flush")
+            println("Completely Flushed")
             winnings += 15
         }
         if 3 == straightWinCount {
@@ -82,6 +107,52 @@ class SlotBrain {
     }
     
     // Helpers
+    class func checkRoyalFlush(slotRow:[Slot]) -> Bool {
+        let slot1 = slotRow[0]
+        let slot2 = slotRow[1]
+        let slot3 = slotRow[2]
+        
+        if checkFlush(slotRow) { // make sure all are same color first
+            if checkThreeInARow(slotRow){
+                if checkSameSuite(slotRow) {
+                    if slot1.value == 12 && slot2.value == 13 && slot3.value == 1 { // Q K A
+                        return true
+                    }else if slot1.value == 1 && slot2.value == 13 && slot3.value == 12 { // A K Q
+                        return true
+                    }else{
+                        return false
+                    }
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
+        }else{
+            return false
+        }
+    }
+    
+    class func checkStraightFlush(slotRow:[Slot]) -> Bool {
+        let slot1 = slotRow[0]
+        let slot2 = slotRow[1]
+        let slot3 = slotRow[2]
+        
+        if checkFlush(slotRow) { // make sure all are same color first
+            if checkThreeInARow(slotRow){
+                if checkSameSuite(slotRow) {
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
+        }else{
+            return false
+        }
+    }
+    
     class func checkFlush(slotRow:[Slot]) -> Bool { // only checks based on color
         let slot1 = slotRow[0]
         let slot2 = slotRow[1]
@@ -116,6 +187,18 @@ class SlotBrain {
         let slot3 = slotRow[2]
         
         if slot1.value == slot2.value && slot1.value == slot3.value {
+            return true
+        }else {
+            return false
+        }
+    }
+    
+    class func checkSameSuite(slotRow:[Slot]) -> Bool {
+        let slot1 = slotRow[0]
+        let slot2 = slotRow[1]
+        let slot3 = slotRow[2]
+        
+        if slot1.suite == slot2.suite && slot1.suite == slot3.suite {
             return true
         }else {
             return false

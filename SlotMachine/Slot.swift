@@ -13,4 +13,5 @@ struct Slot {
     var value:Int
     var image:UIImage
     var isRed:Bool
+    var suite:String
 }
