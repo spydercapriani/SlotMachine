@@ -15,6 +15,7 @@
 		3DEDBC3319D1EAA3002AC355 /* SlotMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDBC3219D1EAA3002AC355 /* SlotMachineTests.swift */; };
 		3DEDBC3D19D20F34002AC355 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDBC3C19D20F34002AC355 /* Slot.swift */; };
 		3DEDBC3F19D211CC002AC355 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDBC3E19D211CC002AC355 /* Factory.swift */; };
+		3DEDBC4119D316D3002AC355 /* SlotBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDBC4019D316D3002AC355 /* SlotBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		3DEDBC3219D1EAA3002AC355 /* SlotMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineTests.swift; sourceTree = "<group>"; };
 		3DEDBC3C19D20F34002AC355 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		3DEDBC3E19D211CC002AC355 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		3DEDBC4019D316D3002AC355 /* SlotBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				3DEDBC1C19D1EAA3002AC355 /* AppDelegate.swift */,
 				3DEDBC1E19D1EAA3002AC355 /* ViewController.swift */,
+				3DEDBC4019D316D3002AC355 /* SlotBrain.swift */,
 				3DEDBC3C19D20F34002AC355 /* Slot.swift */,
 				3DEDBC3E19D211CC002AC355 /* Factory.swift */,
 				3DEDBC2019D1EAA3002AC355 /* Main.storyboard */,
@@ -222,6 +225,7 @@
 				3DEDBC1F19D1EAA3002AC355 /* ViewController.swift in Sources */,
 				3DEDBC3D19D20F34002AC355 /* Slot.swift in Sources */,
 				3DEDBC1D19D1EAA3002AC355 /* AppDelegate.swift in Sources */,
+				3DEDBC4119D316D3002AC355 /* SlotBrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +419,7 @@
 				3DEDBC3819D1EAA3002AC355 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3DEDBC3919D1EAA3002AC355 /* Build configuration list for PBXNativeTarget "SlotMachineTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				3DEDBC3B19D1EAA3002AC355 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
